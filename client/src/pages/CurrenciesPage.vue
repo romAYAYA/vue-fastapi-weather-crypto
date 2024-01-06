@@ -28,6 +28,7 @@ const currencies = ref([])
 onMounted(async () => {
   try {
     await getCurrencies()
+    startPolling()
   } catch (error) {
     console.error('An error occurred:', error.message)
   }
@@ -40,5 +41,11 @@ async function getCurrencies() {
   } catch (err) {
     console.error(err)
   }
+}
+
+function startPolling() {
+  setInterval(() => {
+    getCurrencies()
+  }, 5000)
 }
 </script>

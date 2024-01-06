@@ -43,7 +43,7 @@ def get_crypto_currency():
         res = requests.get('https://api.binance.com/api/v3/ticker/price?')
         res.raise_for_status()
         crypto_price = res.json()
-        return crypto_price
+        return JSONResponse(content={"crypto_price": crypto_price})
     except requests.RequestException as e:
         return {"status": "error", "message": f"Error during HTTP request: {e}"}
 
