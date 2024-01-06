@@ -32,7 +32,7 @@ def get_weather(city: str = Query(..., scription="City to get weather for")):
 def get_currency():
     try:
         currency = cp.get_currency()
-        return currency
+        return JSONResponse(content={"currency": currency})
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
