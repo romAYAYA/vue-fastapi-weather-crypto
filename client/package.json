@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.6.5",
     "prettier": "^3.1.1",
     "vue": "^3.3.11"
   },
